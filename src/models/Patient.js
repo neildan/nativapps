@@ -8,7 +8,7 @@ module.exports = (sequelize, type) => {
             autoIncrement: true
         },
         id: {
-            type: type.STRING,
+            type: type.STRING(20),
             allowNull: false,
         },
         first_name: {
@@ -24,7 +24,7 @@ module.exports = (sequelize, type) => {
             allowNull: false,
         },
         phone: {
-            type: type.STRING,
+            type: type.STRING(20),
             allowNull: false,
         }
     });

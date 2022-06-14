@@ -1,9 +1,10 @@
+const config = require('../../config');
 const { Sequelize } = require('sequelize');
 
-const PatientModel = require('../models/patient')
+const PatientModel = require('../models/Patient')
 
-const sequelize = new Sequelize('nativapps', 'root', 'root', {
-    host: 'localhost',
+const sequelize = new Sequelize(config.DB_DATABASE, config.DB_USERNAME, config.DB_PASSWORD, {
+    host: config.DB_HOST,
     dialect: 'postgres',
     port: 5432
 });

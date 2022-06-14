@@ -3,18 +3,27 @@
 # Daniel Valencia - FullStack Developer
 Email: `danielfelipeluis@outlook.com`
 
-## Correr Docker PostgreSQL
+## Primeros pasos
 
-1. `docker pull postgres`
+1. Agregar .env en la raíz del proyecto
+2. Tener Docker instalado
 
-2. `docker run --name postgresql -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -p 5432:5432 -v /data:/var/lib/postgresql/data -d postgres`
+## Correr sh Docker (Opción 1) Forma automatizada
 
-3. `docker pull dpage/pgadmin4:latest`
+1. Ejecutar `sh Docker.sh`
 
-4. `docker run --name my-pgadmin -p 82:80 -e 'PGADMIN_DEFAULT_EMAIL=root@gmail.com' -e 'PGADMIN_DEFAULT_PASSWORD=root' -d dpage/pgadmin4`
+## Docker API y PostgreSQL (Opción 2) Forma manual
 
-## Correr Docker API
+1. Ejecutar `docker pull postgres`
 
-1. `docker build -f Dockerfile -t nativapps .`
+2. Ejecutar `docker run -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -e POSTGRES_DB=nativapps -v /data:/var/lib/postgresql/data --name postgresql -d postgres:latest`
 
-2. `docker run --publish 3000:3000 nativapps`
+3. Ejecutar `docker pull dpage/pgadmin4:latest`
+
+4. Ejecutar `docker run --name my-pgadmin -p 82:80 -e 'PGADMIN_DEFAULT_EMAIL=root@gmail.com' -e 'PGADMIN_DEFAULT_PASSWORD=root' -d dpage/pgadmin4`
+
+5. Ejecutar `docker build -f Dockerfile -t nativapps .`
+
+6. Ejecutar `docker run -p 3000:3000 --name nativapps -d nativapps`
+
+7. Abrir `http://localhost:82/` en el navegador
