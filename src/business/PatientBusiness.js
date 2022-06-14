@@ -1,15 +1,14 @@
 const { Patient } = require('../db/config')
 
 class PatientBusiness {
-
-    constructor(body) {
-      this.body = body;
+  async create(body) {
+    try {
+      let patient = await Patient.create(body)
+      return patient.dataValues;
+    } catch(e){
+      throw e;
     }
-
-    async create() {
-        let patient = await Patient.create(req.body)
-        return patient;
-    }
+  }
 }
 
-module.exports.PatientBusiness = PatientBusiness;
+module.exports = PatientBusiness;

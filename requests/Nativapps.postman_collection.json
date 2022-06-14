@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "22dfc131-eb63-4cd9-bc53-c7180568d689",
+		"name": "Nativapps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create-patient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1000363326\",\r\n    \"first_name\": \"Daniel\",\r\n    \"last_name\": \"Valencia\",\r\n    \"email\": \"daniel@gmail.com\",\r\n    \"phone\": \"3108719976\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/patient",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"patient"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -3,16 +3,18 @@ const { Sequelize } = require('sequelize');
 const PatientModel = require('../models/patient')
 
 const sequelize = new Sequelize('nativapps', 'root', 'root', {
-    host: '172.17.0.2',
+    host: 'localhost',
     dialect: 'postgres',
-    logging: false
+    port: 5432
 });
 
 sequelize.sync({
     force: false
 }).then(() => {
     console.log("Tables sync")
-})
+}).catch((err) => {
+    console.log('Unable to connect to the database:', err);
+});
 
 const Patient = PatientModel(sequelize, Sequelize);
 

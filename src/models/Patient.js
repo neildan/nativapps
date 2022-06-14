@@ -1,4 +1,4 @@
-const sequalize = require('sequelize');
+const sequelize = require('sequelize');
 
 module.exports = (sequelize, type) => {
     const Patient = sequelize.define('paciente', {
